@@ -10,4 +10,7 @@ var kitties = felids.extendedWhere({
 });
 ```
 
+Also extends [Backbone.js][].Collection if available.
+
+ [Backbone.js]: https://github.com/jashkenas/backbone
  [Underscore.js]: https://github.com/jashkenas/underscore

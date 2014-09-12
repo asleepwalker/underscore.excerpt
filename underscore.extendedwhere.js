@@ -21,3 +21,9 @@ _.extendedWhere = function(list, attrs, after) {
 		}
 	});
 };
+
+if (Backbone) {
+	Backbone.Collection.prototype.extendedWhere = function(attrs, after) {
+		return _.extendedWhere(this, attrs, after);
+	};
+}
