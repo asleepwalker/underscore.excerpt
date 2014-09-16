@@ -1,6 +1,6 @@
 **Underscore.ExtendedWhere**
 
-Smarter select from [Underscore.js][] collections.
+Smarter select from [Underscore.js][] and [Backbone.js][] collections.
 
 ```
 var kitties = felids.extendedWhere({
@@ -9,8 +9,6 @@ var kitties = felids.extendedWhere({
 	ageInDays: {'operator': '<', value: 50}
 });
 ```
-
-Also extends [Backbone.js][].Collection if available.
 
  [Backbone.js]: https://github.com/jashkenas/backbone
  [Underscore.js]: https://github.com/jashkenas/underscore
