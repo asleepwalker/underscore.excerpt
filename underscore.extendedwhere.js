@@ -1,6 +1,7 @@
 _.extendedWhere = function(list, attrs, after) {
 	var direct = {},
-	    expressions = {};
+	    expressions = {},
+	    matched = [];
 
 	for (var key in attrs) {
 		if (_.has(attrs[key], 'operator') && _.has(attrs[key], 'value'))
@@ -8,18 +9,23 @@ _.extendedWhere = function(list, attrs, after) {
 		else direct[key] = attrs[key];
 	}
 
-	return _.filter(list.where(direct), function(obj) {
-		for (var key in expressions) {
-			switch (expressions[key].operator) {
-				case '==': { if (obj.get(key) == expressions[key].value) return obj; else break; }
-				case '<': { if (+obj.get(key) < +expressions[key].value) return obj; else break; }
-				case '<=': { if (+obj.get(key) <= +expressions[key].value) return obj; else break; }
-				case '>': { if (+obj.get(key) > +expressions[key].value) return obj; else break; }
-				case '>=': { if (+obj.get(key) >= +expressions[key].value) return obj; else break; }
-				case 'regexp': { if (expressions[key].value.test(obj.get(key))) return obj; else break; }
+	matched = list.where(direct);
+	for (var key in expressions) {
+		var val = expressions[key].value;
+		    operator = expressions[key].operator;
+
+		matched = _.filter(matched, function(obj) {
+			switch (operator) {
+				case '==': { if (obj.get(key) == val) return obj; else break; }
+				case '<': { if (+obj.get(key) < +val) return obj; else break; }
+				case '<=': { if (+obj.get(key) <= +val) return obj; else break; }
+				case '>': { if (+obj.get(key) > +val) return obj; else break; }
+				case '>=': { if (+obj.get(key) >= +val) return obj; else break; }
+				case 'regexp': { if (val.test(obj.get(key))) return obj; else break; }
 			}
-		}
-	});
+		});
+	}
+	return matched;
 };
 
 if (Backbone) {
