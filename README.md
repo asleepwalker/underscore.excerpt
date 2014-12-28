@@ -1,4 +1,4 @@
-**Underscore.ExtendedWhere**
+#Underscore.ExtendedWhere
 
 Smarter select from [Underscore.js][] and [Backbone.js][] collections.
 

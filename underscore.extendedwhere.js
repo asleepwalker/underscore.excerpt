@@ -1,3 +1,9 @@
+/*
+*	Underscore.ExtendedWhere, v1.0
+*	(c) 2014 Artyom "Sleepwalker" Fedosov <mail@asleepwalker.ru>
+*	https://github.com/asleepwalker/underscore.extendedwhere
+*/
+
 _.extendedWhere = function(list, attrs, after) {
 	var direct = {},
 	    expressions = {},
