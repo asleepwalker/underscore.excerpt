@@ -1,9 +1,9 @@
-#Underscore.ExtendedWhere
+#Underscore.Excerpt
 
-Smarter select from [Underscore.js][] and [Backbone.js][] collections.
+Smarter select query from [Underscore.js][] and [Backbone.js][] collections.
 
 ```
-var kitties = felids.extendedWhere({
+var kitties = felids.excerpt({
 	species: 'cat',
 	aggressive: {'operator': '==', value: false}, // Has not remarks
 	ageInDays: {'operator': '<', value: 50}

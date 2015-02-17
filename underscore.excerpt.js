@@ -1,18 +1,20 @@
 /*
-*	Underscore.ExtendedWhere, v1.0
-*	(c) 2014 Artyom "Sleepwalker" Fedosov <mail@asleepwalker.ru>
-*	https://github.com/asleepwalker/underscore.extendedwhere
+*	Underscore.Excerpt, v1.0.1
+*	(c) 2015 Artyom "Sleepwalker" Fedosov <mail@asleepwalker.ru>
+*	https://github.com/asleepwalker/underscore.excerpt
 */
 
-_.extendedWhere = function(list, attrs, after) {
+_.excerpt = function(list, attrs, after) {
 	var direct = {},
 	    expressions = {},
 	    matched = [];
 
 	for (var key in attrs) {
-		if (_.has(attrs[key], 'operator') && _.has(attrs[key], 'value'))
+		if (_.has(attrs[key], 'operator') && _.has(attrs[key], 'value')) {
 			expressions[key] = attrs[key];
-		else direct[key] = attrs[key];
+		} else {
+			direct[key] = attrs[key];
+		}
 	}
 
 	matched = list.where(direct);
@@ -35,7 +37,7 @@ _.extendedWhere = function(list, attrs, after) {
 };
 
 if (Backbone) {
-	Backbone.Collection.prototype.extendedWhere = function(attrs, after) {
-		return _.extendedWhere(this, attrs, after);
+	Backbone.Collection.prototype.excerpt = function(attrs, after) {
+		return _.excerpt(this, attrs, after);
 	};
 }
