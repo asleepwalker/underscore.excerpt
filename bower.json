@@ -1,0 +1,29 @@
+{
+  "name": "underscore.excerpt",
+  "main": "underscore.excerpt.js",
+  "version": "1.0.1",
+  "homepage": "https://github.com/asleepwalker/underscore.extendedwhere",
+  "authors": [
+    "Artyom 'Sleepwalker' Fedosov <mail@asleepwalker.ru>"
+  ],
+  "description": "Smarter select query from Underscore.js collections",
+  "keywords": [
+    "underscore",
+    "where",
+    "filter",
+    "select",
+    "query",
+    "collections"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": ">1.6"
+  }
+}
