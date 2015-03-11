@@ -1,43 +1,77 @@
 /*
-*	Underscore.Excerpt, v1.0.1
-*	(c) 2015 Artyom "Sleepwalker" Fedosov <mail@asleepwalker.ru>
+*	Underscore.Excerpt, v1.0.2
+*	(c) 2014–2015 Artyom "Sleepwalker" Fedosov <mail@asleepwalker.ru>
 *	https://github.com/asleepwalker/underscore.excerpt
 */
 
 _.excerpt = function(list, attrs, after) {
 	var direct = {},
-	    expressions = {},
-	    matched = [];
+		expressions = {},
+		matched = [],
+		key,
+		val,
+		operator;
 
-	for (var key in attrs) {
-		if (_.has(attrs[key], 'operator') && _.has(attrs[key], 'value')) {
-			expressions[key] = attrs[key];
+	_.each(attrs, function(filterVal, filterKey) {
+		if (_.has(filterVal, 'operator') && _.has(filterVal, 'value')) {
+			expressions[filterKey] = filterVal;
 		} else {
-			direct[key] = attrs[key];
+			direct[filterKey] = filterVal;
 		}
-	}
+	});
 
-	matched = list.where(direct);
-	for (var key in expressions) {
-		var val = expressions[key].value;
-		    operator = expressions[key].operator;
+	matched = _.where(list, direct);
+
+	_.each(expressions, function(filterVal, filterKey) {
+		val = filterVal.value;
+		operator = filterVal.operator;
 
 		matched = _.filter(matched, function(obj) {
 			switch (operator) {
-				case '==': { if (obj.get(key) == val) return obj; else break; }
-				case '<': { if (+obj.get(key) < +val) return obj; else break; }
-				case '<=': { if (+obj.get(key) <= +val) return obj; else break; }
-				case '>': { if (+obj.get(key) > +val) return obj; else break; }
-				case '>=': { if (+obj.get(key) >= +val) return obj; else break; }
-				case 'regexp': { if (val.test(obj.get(key))) return obj; else break; }
+				case '==': {
+					if (obj[filterKey] == val) {
+						return obj;
+					}
+					break;
+				}
+				case '!=': {
+					if (obj[filterKey] != val) {
+						return obj;
+					}
+					break;
+				}
+				case '<': {
+					if (+obj[filterKey] < +val) {
+						return obj;
+					}
+					break;
+				}
+				case '<=': {
+					if (+obj[filterKey] <= +val) {
+						return obj;
+					}
+					break;
+				}
+				case '>': {
+					if (+obj[filterKey] > +val) {
+						return obj;
+					}
+					break;
+				}
+				case '>=': {
+					if (+obj[filterKey] >= +val) {
+						return obj;
+					}
+					break;
+				}
+				case 'regexp': {
+					if (val.test(obj[filterKey])) {
+						return obj;
+					}
+					break;
+				}
 			}
 		});
-	}
+	});
 	return matched;
 };
-
-if (Backbone) {
-	Backbone.Collection.prototype.excerpt = function(attrs, after) {
-		return _.excerpt(this, attrs, after);
-	};
-}
