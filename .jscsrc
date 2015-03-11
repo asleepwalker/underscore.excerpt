@@ -1,0 +1,5 @@
+{
+	"preset": "airbnb",
+	"validateIndentation": "\t",
+	"requireCurlyBraces": ["if", "else", "for", "while", "do", "try", "catch", "case"]
+}

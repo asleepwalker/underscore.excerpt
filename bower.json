@@ -1,8 +1,8 @@
 {
   "name": "underscore.excerpt",
   "main": "underscore.excerpt.js",
-  "version": "1.0.1",
-  "homepage": "https://github.com/asleepwalker/underscore.extendedwhere",
+  "version": "1.0.2",
+  "homepage": "https://github.com/asleepwalker/underscore.excerpt",
   "authors": [
     "Artyom 'Sleepwalker' Fedosov <mail@asleepwalker.ru>"
   ],
@@ -24,6 +24,6 @@
     "tests"
   ],
   "dependencies": {
-    "underscore": ">1.6"
+    "underscore": ">=1.6"
   }
 }

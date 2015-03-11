@@ -1,0 +1,37 @@
+{
+  "name": "underscore.excerpt",
+  "version": "1.0.2",
+  "description": "Smarter select query from Underscore.js collections",
+  "main": "underscore.excerpt.js",
+  "scripts": {
+    "test": "grunt test && node test/node-index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/asleepwalker/underscore.excerpt.git"
+  },
+  "keywords": [
+    "underscore",
+    "where",
+    "filter",
+    "select",
+    "query",
+    "collections"
+  ],
+  "author": "Artyom 'Sleepwalker' Fedosov <mail@asleepwalker.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asleepwalker/underscore.excerpt/issues"
+  },
+  "dependencies": {
+    "underscore": ">=1.6"
+  },
+  "devDependencies": {
+    "qunit": "~0.7.5",
+    "grunt": "~0.4.5",
+    "grunt-contrib-qunit": "~0.5.2",
+    "grunt-contrib-jshint": "~0.11.0",
+    "grunt-jscs": "~1.5.0",
+    "qunitjs": "~1.17.1"
+  }
+}
