@@ -7,13 +7,22 @@ module.exports = function(grunt) {
 		jshint: {
 			files: ['Gruntfile.js', 'lib/*.js', 'test/*.js'],
 			options: {
-				jshintrc: '.jshintrc'
+				jquery: true,
+				globals: {
+					console: true,
+					module: true,
+					document: true
+				}
 			}
 		},
 		jscs: {
 			src: ['Gruntfile.js', 'lib/*.js', 'test/*.js'],
 			options: {
-				config: '.jscsrc'
+				preset: 'airbnb',
+				validateIndentation: '\t',
+				disallowMultipleVarDecl: null,
+				requireMultipleVarDecl: true,
+				requireCurlyBraces: ['if', 'else', 'for', 'while', 'do', 'try', 'catch', 'case']
 			}
 		},
 		qunit: {
