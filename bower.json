@@ -1,12 +1,12 @@
 {
   "name": "underscore.excerpt",
-  "main": "underscore.excerpt.js",
+  "main": "lib/underscore.excerpt.js",
   "version": "1.0.2",
   "homepage": "https://github.com/asleepwalker/underscore.excerpt",
   "authors": [
     "Artyom 'Sleepwalker' Fedosov <mail@asleepwalker.ru>"
   ],
-  "description": "Smarter select query from Underscore.js collections",
+  "description": "Smarter select queries from Underscore.js collections",
   "keywords": [
     "underscore",
     "where",

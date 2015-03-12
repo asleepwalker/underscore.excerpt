@@ -2,7 +2,7 @@ var qunit = require('qunit');
 
 qunit.run({
     code: {
-		path: 'src/underscore.excerpt.js',
+		path: 'lib/underscore.excerpt.js',
 		namespace: 'excerpt'
     },
     tests: [

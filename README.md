@@ -1,6 +1,6 @@
 #Underscore.Excerpt
 
-Smarter select query from [Underscore.js](https://github.com/jashkenas/underscore) collections.
+Smarter select queries from [Underscore.js](https://github.com/jashkenas/underscore) collections.
 
 ```
 var kitties = _.excerpt(felids, {

@@ -2,7 +2,7 @@
   "name": "underscore.excerpt",
   "version": "1.0.2",
   "description": "Smarter select query from Underscore.js collections",
-  "main": "underscore.excerpt.js",
+  "main": "lib/underscore.excerpt.js",
   "scripts": {
     "test": "grunt test && node test/node-index.js"
   },
