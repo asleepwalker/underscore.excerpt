@@ -9,3 +9,5 @@ var kitties = _.excerpt(felids, {
 	ageInDays: {'operator': '<', value: 50}
 });
 ```
+
+[![Build Status](https://travis-ci.org/asleepwalker/underscore.excerpt.svg?branch=master)](https://travis-ci.org/asleepwalker/underscore.excerpt)
