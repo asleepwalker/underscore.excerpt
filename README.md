@@ -1,4 +1,4 @@
-#Underscore.Excerpt &nbsp;[![Build Status](https://travis-ci.org/asleepwalker/underscore.excerpt.svg?branch=master)](https://travis-ci.org/asleepwalker/underscore.excerpt)
+#Underscore.Excerpt [![Build Status](https://travis-ci.org/asleepwalker/underscore.excerpt.svg?branch=master)](https://travis-ci.org/asleepwalker/underscore.excerpt) [![Dependency Status](https://gemnasium.com/badges/github.com/asleepwalker/underscore.excerpt.svg)](https://gemnasium.com/github.com/asleepwalker/underscore.excerpt)
 
 Smarter select queries from [Underscore.js](https://github.com/jashkenas/underscore) collections.
 
